@@ -1,8 +1,15 @@
 @import "base";
 
-// --- Top site styling
+////////////////////////////////////////          Top site styling           ///////////////////////////////////////////
 
-// Top portion of the index page, contains the site-title-container, nav and login-signup.
+/** header#site-top
+ *
+ * Top portion of the index page, contains the site-title-container, nav and login-signup.
+ *
+ * Relative to: header nav
+ *
+ * The login-signup container is yet to be created.
+ */
 header#site-top {
   display: block;
 

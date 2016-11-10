@@ -1,0 +1,45 @@
+{{block head}}
+    <!--     Stylesheets      -->
+    <link rel="stylesheet" href="{{=URL('static','css/index.css')}}"/>
+
+    <!--     JavaScripts      -->
+    <script src="{{=URL('static', 'js/vue.js')}}"></script>
+    <script>
+        var get_projects_url = "{{=URL('projects_api', 'get_projects')}}";
+        var add_post_url = "{{=URL('projects_api', 'add_post', user_signature=True)}}";
+        var del_post_url = "{{=URL('projects_api', 'del_post', user_signature=True)}}";
+    </script>
+{{end}}
+
+{{extend 'layout.html'}}
+
+<div id="site-container">
+
+<header id="site-top">
+
+</header>
+
+<main id="site-content">
+    <div id="vue-div">
+
+    <div id="projects-list">
+        <table>
+            <tr>
+                <th>Project</th>
+                <th>Phase</th>
+                <th>Version</th>
+            </tr>
+            <tr v-for="project in projects">
+                <td>${project.name}</td>
+                <td>${project.phase}</td>
+                <td>${project.version}</td>
+            </tr>
+        </table>
+    </div>
+
+    </div>
+</main>
+
+</div>
+
+<script src="{{=URL('static', 'js/projects_vue.js')}}"></script>
